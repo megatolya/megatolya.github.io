@@ -1,0 +1,49 @@
+body {
+    margin: 0 auto;
+    max-width: 1000px;
+    min-width: 800px;
+    font-family: sans-serif;
+}
+
+h1, h2 {
+    font-weight: normal;
+    margin: 5px;
+}
+
+.clear {
+    clear: both;
+}
+
+article {
+    font-family: serif;
+}
+
+.instagram {
+    position: relative;
+    width: 400px;
+    float: left;
+}
+
+.twitter {
+    width: 400px;
+    float: right;
+}
+
+.header {
+    text-align: center;
+    margin: 40px;
+}
+
+.my-instagram-link {
+    width: 400px;
+    height: 400px;
+    display: block;
+    position: absolute;
+    top: 67px;
+    left: 0;
+}
+
+.footer {
+    margin: 30px 0 10px 0;
+}
+
