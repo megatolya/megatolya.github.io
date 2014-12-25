@@ -3,6 +3,7 @@ body {
     max-width: 1000px;
     min-width: 800px;
     font-family: sans-serif;
+    padding: 12px;
 }
 
 h1, h2 {
