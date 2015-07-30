@@ -1,0 +1,28 @@
+require('node-jsx').install({extension: '.jsx', harmony: true, es6module: true});
+
+var fs = require('grunt').file;
+var jade = require('jade');
+var path = require('path');
+var React = require('react');
+
+var config = require('./config');
+var App = React.createFactory(require('./src/components/app/app.jsx'));
+
+var layoutTemplate = jade.compileFile(path.resolve(path.join(__dirname, 'src/views/layout.jade')));
+
+Object.keys(config).forEach(function (lang) {
+    var data = config[lang];
+
+    data.text = fs.read('README.' + lang + '.md').split('\n').filter(Boolean);
+    data.content = React.renderToStaticMarkup(App(data));
+
+    var html = layoutTemplate({
+        lang: lang,
+        meta: data,
+        content: data.content
+    });
+    var filePath = path.resolve(path.join(__dirname, data.buildUrl));
+    fs.mkdir(path.dirname(filePath));
+    fs.write(filePath, html);
+    console.log(data.content);
+});

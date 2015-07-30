@@ -4,15 +4,16 @@
 }
 
 html,
-body {
+body,
+.app {
     height: 100%;
 }
 
 .wrapper {
     min-height: 100%;
-    margin: 0 auto -25px;
+    margin: 0 auto -15px;
 }
-.footer, .push {
+footer, .push {
     height: 15px;
     text-align: center;
     font-family: sans-serif;
@@ -38,22 +39,14 @@ article {
     font-family: serif;
 }
 
-.instagram {
+footer {
     position: relative;
-    width: 400px;
-    float: left;
+    top: -5px;
 }
 
-.twitter {
-    width: 400px;
-    float: right;
-}
-
-.my-instagram-link {
-    width: 400px;
+.instagram-frame {
+    width: 100%;
+    border: 0px;
+    overflow: hidden;
     height: 400px;
-    display: block;
-    position: absolute;
-    top: 38px;
-    left: 0;
 }

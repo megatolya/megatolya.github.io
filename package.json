@@ -1,0 +1,13 @@
+{
+  "name": "tolya.me",
+  "version": "0.0.0",
+  "description": "",
+  "dependencies": {
+    "babel": "^5.8.19",
+    "grunt": "^0.4.5",
+    "jade": "^1.11.0",
+    "node-jsx": "^0.13.3",
+    "react": "^0.13.3",
+    "react-tools": "^0.13.3"
+  }
+}
