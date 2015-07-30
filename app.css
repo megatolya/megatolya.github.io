@@ -44,13 +44,7 @@ footer {
     top: -5px;
 }
 
-.instagram-frame {
-    width: 100%;
-    border: 0px;
-    overflow: hidden;
-    height: 400px;
-}
-
 noindex {
     display: block;
+    width: 100%;
 }

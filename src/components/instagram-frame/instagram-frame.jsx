@@ -2,6 +2,13 @@ var React = require('react/addons');
 
 var InstagramFrame = React.createClass({
     render: function () {
+        var styles = {
+            width: '100%',
+            border: '0',
+            overflow: 'hidden',
+            height: '400px'
+        };
+
         return (
             <noindex>
                 <script src="//instansive.com/widget/js/instansive.js"></script>
@@ -12,6 +19,7 @@ var InstagramFrame = React.createClass({
                     scrolling="no"
                     allowTransparency="true"
                     className="instansive-widget"
+                    style={styles}
                 ></iframe>
             </noindex>
         )
