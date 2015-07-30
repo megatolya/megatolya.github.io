@@ -1,17 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    margin: 0 auto -25px;
+}
+.footer, .push {
+    height: 15px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
 body {
     width: 400px;
     margin: 0 auto;
-    font-family: sans-serif;
-    padding: 12px;
 }
 
-h1, h2 {
+h1, h2, p {
     font-weight: normal;
-    margin: 5px;
+    padding-top: 5px;
+    font-family: sans-serif;
 }
 
-.clear {
-    clear: both;
+p {
+    padding-top: 12px;
+    font-family: serif;
 }
 
 article {
@@ -37,8 +57,3 @@ article {
     top: 38px;
     left: 0;
 }
-
-.footer {
-    margin: 30px 0 10px 0;
-}
-
