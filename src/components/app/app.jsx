@@ -1,12 +1,13 @@
 var React = require('react/addons');
+var Component = React.Component;
 
 var Header = require('../header/header.jsx');
 var MainInfo = require('../main-info/main-info.jsx');
 var Footer = require('../footer/footer.jsx');
 var InstagramFrame = require('../instagram-frame/instagram-frame.jsx');
 
-var App = React.createClass({
-    render: function () {
+export default class App extends Component {
+    render() {
         return (
             <div className="app">
                 <div className="wrapper">
@@ -19,6 +20,4 @@ var App = React.createClass({
             </div>
         )
     }
-});
-
-module.exports = App;
+}

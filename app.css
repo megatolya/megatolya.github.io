@@ -11,10 +11,10 @@ body,
 
 .wrapper {
     min-height: 100%;
-    margin: 0 auto -15px;
+    margin: 0 auto -50px;
 }
 footer, .push {
-    height: 15px;
+    height: 50px;
     text-align: center;
     font-family: sans-serif;
 }
@@ -47,4 +47,14 @@ footer {
 noindex {
     display: block;
     width: 100%;
+}
+
+.flag-icon {
+    margin-left: 5px;
+}
+
+.lang-changer {
+    visibility: hidden;
+    margin: 3px 0;
+    font-size: smaller;
 }
