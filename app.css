@@ -10,10 +10,12 @@ body,
 }
 
 .wrapper {
-    box-sizing: border-box;
     min-height: 100%;
     margin: 0 auto -50px;
-    padding: 16px;
+}
+
+h1, h2, main {
+    padding: 5px;
 }
 
 footer, .push {
