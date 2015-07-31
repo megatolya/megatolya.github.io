@@ -10,9 +10,12 @@ body,
 }
 
 .wrapper {
+    box-sizing: border-box;
     min-height: 100%;
     margin: 0 auto -50px;
+    padding: 16px;
 }
+
 footer, .push {
     height: 50px;
     text-align: center;
