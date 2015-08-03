@@ -1,10 +1,6 @@
 #!/bin/bash
 set -e # exit with nonzero exit code if anything fails
 
-# clear and re-create the out directory
-rm -rf out || exit 0;
-mkdir out;
-
 # run our compile script, discussed above
 node build.js
 
@@ -16,5 +12,6 @@ git config user.email "forgetthisbox@gmail.com"
 # files present with the commit message "Deploy to GitHub Pages".
 git add .
 git commit -m "Auto build"
+git log
 
-git push "https://${GH_TOKEN}@${GH_REF}" master:master
+git push --force "https://${GH_TOKEN}@${GH_REF}"
