@@ -6,6 +6,6 @@ env:
 language: node_js
 branches:
   only:
-    - dev
+    - master
 node_js:
 - "0.12"
