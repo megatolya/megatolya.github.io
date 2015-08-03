@@ -22,6 +22,7 @@ h1, h2, p {
 p {
     padding-top: 12px;
     font-family: serif;
+    white-space: nowrap;
 }
 
 article {
