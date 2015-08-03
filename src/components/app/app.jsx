@@ -1,5 +1,6 @@
 let React = require('react/addons');
-let {Component} = React;
+let Component = require('../component/component.jsx');
+var {RouteHandler} = require('react-router');
 
 let Header = require('../header/header.jsx');
 let MainInfo = require('../main-info/main-info.jsx');
@@ -11,13 +12,14 @@ export default class App extends Component {
         return (
             <div className="app">
                 <div className="wrapper">
-                    <Header author={this.props.author}/>
-                    <MainInfo text={this.props.text}/>
-                    <InstagramFrame/>
+                    <Header lang={this.props.lang}/>
+                    <MainInfo lang={this.props.lang}/>
+                    <InstagramFrame lang={this.props.lang}/>
                     <div className="push"/>
                 </div>
-                <Footer author={this.props.author}/>
+                <RouteHandler />
+                <Footer lang={this.props.lang}/>
             </div>
-        )
+        );
     }
 };

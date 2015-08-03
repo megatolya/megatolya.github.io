@@ -1,5 +1,5 @@
 let React = require('react/addons');
-let {Component} = React;
+let Component = require('../component/component.jsx');
 
 export default class InstagramFrame extends Component {
     render() {
@@ -22,6 +22,6 @@ export default class InstagramFrame extends Component {
                     style={styles}
                 ></iframe>
             </noindex>
-        )
+        );
     }
 };
