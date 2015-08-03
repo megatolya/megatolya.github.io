@@ -18,6 +18,7 @@ var InstagramFrame = React.createClass({
                     scrolling="no" allowTransparency="true"
                     className="instansive-widget"
                     style={styles}
+                    test="123"
                 ></iframe>
             </noindex>
         )
