@@ -12,6 +12,7 @@ git config user.email "forgetthisbox@gmail.com"
 # files present with the commit message "Deploy to GitHub Pages".
 git init
 git add .
+git checkout master
 git commit -a -m "Auto build #$TRAVIS_BUILD_NUMBER"
 git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
 
