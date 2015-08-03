@@ -1,0 +1,10 @@
+{
+  "name": "me",
+  "version": "0.0.0",
+  "moduleType": [
+    "globals"
+  ],
+  "dependencies": {
+    "flag-icon-css": "~0.7.1"
+  }
+}
