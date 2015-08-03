@@ -10,8 +10,7 @@ git config user.email "forgetthisbox@gmail.com"
 
 # The first and only commit to this new Git repo contains all the
 # files present with the commit message "Deploy to GitHub Pages".
+git init
 git add .
-git commit -m "Auto build"
-git log
-
-git push --force "https://${GH_TOKEN}@${GH_REF}" master:master
+git commit -a -m "Auto build #$TRAVIS_BUILD_NUMBER"
+git push --quiet origin master > /dev/null 2>&1 
