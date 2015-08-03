@@ -14,4 +14,4 @@ git add .
 git commit -m "Auto build"
 git log
 
-git push --force "https://${GH_TOKEN}@${GH_REF}"
+git push --force "https://${GH_TOKEN}@${GH_REF}" master:master
