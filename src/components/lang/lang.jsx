@@ -1,14 +1,11 @@
-var React = require('react/addons');
+let React = require('react/addons');
+let {Component} = React;
 
-var Lang = require('../lang/lang.jsx');
-
-var Lang = React.createClass({
-    render: function () {
-        var className = 'flag-icon flag-icon-' + this.props.lang;
+export default class Lang extends Component {
+    render() {
+        let className = 'flag-icon flag-icon-' + this.props.lang;
         return (
             <span className={className}/>
         )
     }
-});
-
-module.exports = Lang;
+};

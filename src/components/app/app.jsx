@@ -1,10 +1,10 @@
-var React = require('react/addons');
-var Component = React.Component;
+let React = require('react/addons');
+let {Component} = React;
 
-var Header = require('../header/header.jsx');
-var MainInfo = require('../main-info/main-info.jsx');
-var Footer = require('../footer/footer.jsx');
-var InstagramFrame = require('../instagram-frame/instagram-frame.jsx');
+let Header = require('../header/header.jsx');
+let MainInfo = require('../main-info/main-info.jsx');
+let Footer = require('../footer/footer.jsx');
+let InstagramFrame = require('../instagram-frame/instagram-frame.jsx');
 
 export default class App extends Component {
     render() {
@@ -20,4 +20,4 @@ export default class App extends Component {
             </div>
         )
     }
-}
+};

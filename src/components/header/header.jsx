@@ -1,10 +1,8 @@
-var React = require('react/addons');
+let React = require('react/addons');
+let {Component} = React;
 
-var Header = React.createClass({
-    componentDidMount: function () {
-        console.log('lol');
-    },
-    render: function () {
+export default class Header extends Component {
+    render() {
         return (
               <header role="banner" className="header">
                 <hgroup>
@@ -14,6 +12,6 @@ var Header = React.createClass({
             </header>
         )
     }
-});
+};
 
 module.exports = Header;

@@ -1,7 +1,8 @@
-var React = require('react/addons');
+let React = require('react/addons');
+let {Component} = React;
 
-var MainInfo = React.createClass({
-    render: function () {
+export default class Header extends Component {
+    render() {
         return (
             <main>
                 <article>
@@ -12,6 +13,4 @@ var MainInfo = React.createClass({
             </main>
         )
     }
-});
-
-module.exports = MainInfo;
+};

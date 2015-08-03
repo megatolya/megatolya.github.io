@@ -1,9 +1,8 @@
-var React = require('react/addons');
+let React = require('react/addons');
+let {Component} = React;
 
-var Lang = require('../lang/lang.jsx');
-
-var Footer = React.createClass({
-    render: function () {
+export default class Footer extends Component {
+    render() {
         return (
             <footer>
                 <div className="follow">
@@ -13,11 +12,4 @@ var Footer = React.createClass({
             </footer>
         )
     }
-});
-
-module.exports = Footer;
-                //<div className="lang-changer">
-                    //<a href="/en">Change language</a>
-                    //<Lang lang="gb"/>
-                //</div>
-                //<
+};
