@@ -14,4 +14,4 @@ git init
 git add .
 git commit -a -m "Auto build #$TRAVIS_BUILD_NUMBER"
 git remote set-url origin git@github.com:megatolya/megatolya.github.io.git
-git push --quiet origin master
+git push origin master
