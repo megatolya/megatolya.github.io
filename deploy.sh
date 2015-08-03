@@ -13,4 +13,4 @@ git config user.email "forgetthisbox@gmail.com"
 git init
 git add .
 git commit -a -m "Auto build #$TRAVIS_BUILD_NUMBER"
-git push --quiet origin master > /dev/null 2>&1 
+git push --quiet origin master
