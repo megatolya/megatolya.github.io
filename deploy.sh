@@ -13,5 +13,5 @@ git config user.email "forgetthisbox@gmail.com"
 git init
 git add .
 git commit -a -m "Auto build #$TRAVIS_BUILD_NUMBER"
-git remote set-url origin git@github.com:megatolya/megatolya.github.io.git
-git push origin master
+git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+
