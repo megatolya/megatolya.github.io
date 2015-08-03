@@ -17,4 +17,4 @@ git config user.email "forgetthisbox@gmail.com"
 git add .
 git commit -m "Auto build"
 
-git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master > /dev/null 2>&1
+git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
