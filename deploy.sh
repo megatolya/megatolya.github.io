@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e # exit with nonzero exit code if anything fails
-bower install
+./node_modules/.bin/bower install
 
 # run our compile script, discussed above
 
