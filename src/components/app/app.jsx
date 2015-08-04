@@ -1,7 +1,6 @@
 let React = require('react/addons');
-let Component = require('../component/component.jsx');
-var {RouteHandler} = require('react-router');
 
+let Component = require('../component/component.jsx');
 let Header = require('../header/header.jsx');
 let MainInfo = require('../main-info/main-info.jsx');
 let Footer = require('../footer/footer.jsx');
@@ -17,7 +16,6 @@ export default class App extends Component {
                     <InstagramFrame lang={this.props.lang}/>
                     <div className="push"/>
                 </div>
-                <RouteHandler />
                 <Footer lang={this.props.lang}/>
             </div>
         );
