@@ -1,7 +1,7 @@
 let React = require('react/addons');
 let Component = require('../component/component.jsx');
-var {Link} = require('react-router');
-var Lang = require('../lang/lang.jsx');
+let {Link} = require('react-router');
+let Lang = require('../lang/lang.jsx');
 
 export default class Footer extends Component {
     render() {
