@@ -4,7 +4,7 @@ let {Route, DefaultRoute, RouteHandler} = require('react-router');
 let App = require('./components/app/app.jsx');
 let _ = require('lodash');
 
-var wrapComponent = function(Component, props) {
+let wrapComponent = (Component, props) => {
     return React.createClass({
         render: function() {
             return React.createElement(Component, props);
