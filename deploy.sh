@@ -4,11 +4,15 @@ set -e
 ./node_modules/.bin/bower update
 
 git config user.name "Travis CI"
-git config user.email "forgetthisbox@gmail.com"
+git config user.email "travis@travis-ci.org"
 
 git init
 git checkout master
 node build.js
 git add .
-git commit -a -m "Auto build #$TRAVIS_BUILD_NUMBER" -m '[ci skip]'
+git commit -a \
+    -m "Travis build $TRAVIS_BUILD_NUMBER" \
+    -m "https://travis-ci.org/megatolya/megatolya.github.io/builds/$TRAVIS_BUILD_ID" \
+    -m "https://travis-ci.org/megatolya/megatolya.github.io/builds/$TRAVIS_BUILD_ID" \
+    -m "[ci skip]"
 git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
