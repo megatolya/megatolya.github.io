@@ -13,6 +13,5 @@ git add .
 git commit -a \
     -m "Travis build $TRAVIS_BUILD_NUMBER" \
     -m "https://travis-ci.org/megatolya/megatolya.github.io/builds/$TRAVIS_BUILD_ID" \
-    -m "https://travis-ci.org/megatolya/megatolya.github.io/builds/$TRAVIS_BUILD_NUMBER" \
     -m "[ci skip]"
 git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
