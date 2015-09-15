@@ -12,7 +12,7 @@ let wrapComponent = (Component, props) => {
     });
 };
 
-class Root extends React.Component {
+class Root extends Component {
     render() {
         return <RouteHandler />;
     }

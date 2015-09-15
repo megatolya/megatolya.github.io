@@ -1,11 +1,23 @@
+.lang__flagIcon___3QCLY {
+    margin-left: 5px;
+}
+.footer__langChanger___3wmHa {
+    margin: 5px 0;
+    font-size: smaller;
+}
+
+.footer__copyright___2ernx {
+    display: inline-block;
+}
+
+.footer__follow___38Ua- {}
 * {
     margin: 0;
     padding: 0;
 }
 
 html,
-body,
-.app {
+body {
     height: 100%;
 }
 
@@ -22,7 +34,6 @@ h1, h2, p {
 p {
     padding-top: 12px;
     font-family: serif;
-    white-space: nowrap;
 }
 
 article {
@@ -34,31 +45,20 @@ noindex {
     width: 100%;
 }
 
-.app {
+.app__root___2mVqG {
+    height: 100%;
     max-width: 400px;
     margin: 0 auto;
 }
 
-.wrapper {
+.app__wrapper___f--Dk {
     min-height: 100%;
     margin: 0 auto -90px;
 }
 
-footer, .push {
+footer, .constants__push___3B_DS {
     height: 90px;
     text-align: center;
     font-family: sans-serif;
 }
 
-.flag-icon {
-    margin-left: 5px;
-}
-
-.lang-changer {
-    margin: 5px 0;
-    font-size: smaller;
-}
-
-.copyright {
-    display: inline-block;
-}

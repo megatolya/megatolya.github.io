@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+h1, h2, main {
+    padding: 5px;
+}
+
+h1, h2, p {
+    font-weight: normal;
+    padding-top: 5px;
+    font-family: sans-serif;
+}
+
+p {
+    padding-top: 12px;
+    font-family: serif;
+}
+
+article {
+    font-family: serif;
+}
+
+noindex {
+    display: block;
+    width: 100%;
+}
+
+.root {
+    height: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    min-height: 100%;
+    margin: 0 auto -90px;
+}
+
