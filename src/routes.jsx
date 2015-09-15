@@ -2,7 +2,6 @@ let React = require('react/addons');
 let {Component} = React;
 let {Route, DefaultRoute, RouteHandler} = require('react-router');
 let App = require('./components/app/app.jsx');
-let _ = require('lodash');
 
 let wrapComponent = (Component, props) => {
     return React.createClass({

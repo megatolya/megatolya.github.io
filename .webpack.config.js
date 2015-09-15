@@ -1,6 +1,5 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
-var _ = require('lodash');
 
 function getConfig(target) {
     var isServer = target === 'server';
@@ -43,6 +42,7 @@ function getConfig(target) {
             : []
     };
 }
+
 module.exports = [
     getConfig('server'),
     getConfig('client')
