@@ -14,6 +14,7 @@ Object.keys(config).forEach(function (lang) {
     var url = lang === 'ru' ? '' : ('/' + lang + '/');
     Router.run(routes, url, function(Handler, state) {
         var html = layoutTemplate({
+            env: require('./enviroment'),
             lang: lang,
             meta: data,
             content: React.renderToString(React.createElement(Handler))

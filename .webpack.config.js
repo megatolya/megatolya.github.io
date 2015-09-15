@@ -1,8 +1,23 @@
+var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 
+var production = require('./enviroment').production;
+
 function getConfig(target) {
     var isServer = target === 'server';
+    var plugins = [
+        new ExtractTextPlugin('app.css', {
+            allChunks: true
+        })
+    ];
+
+    if (production) {
+        plugins = plugins.concat([
+            new webpack.optimize.UglifyJsPlugin(),
+            new webpack.optimize.DedupePlugin()
+        ]);
+    }
 
     return {
         context: __dirname,
@@ -28,11 +43,7 @@ function getConfig(target) {
                 : 'var',
             sourcePrefix: '    '
         },
-        plugins: [
-            new ExtractTextPlugin('app.css', {
-                allChunks: true
-            })
-        ],
+        plugins: plugins,
         node: isServer,
         target: isServer
             ? 'node'
