@@ -8,6 +8,7 @@ git config user.email "travis@travis-ci.org"
 
 git init
 git checkout master
+./node_modules/.bin/webpack -p --config .webpack.config.js
 node build.js
 git add .
 git commit -a \
