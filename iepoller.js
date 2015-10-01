@@ -22,6 +22,7 @@
         },
 
         broadcast: function (eventName, eventData) {
+            console.log('broadcasting', eventName, eventData);
             var data = this._getData();
             var events = data[this._id].events;
 
@@ -72,6 +73,8 @@
                     if (!(eventName in handlers) || !eventsToHandle[eventName].length) {
                         return;
                     }
+
+                    console.log('changes in', eventName);
 
                     var eventHandlers = handlers[eventName];
                     eventHandlers.forEach(function (handler) {
