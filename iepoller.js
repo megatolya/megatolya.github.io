@@ -23,11 +23,15 @@
 
         broadcast: function (eventName, eventData) {
             console.log('broadcasting', eventName, eventData);
+            try {
             var data = this._getData();
             var events = data[this._id].events;
 
             events[eventName] = events[eventName] || [];
             events[eventName].push(eventData);
+            } catch (err) {
+                console.log(err);
+            }
             console.log('broadcast events[eventName]', events[eventName]);
             this._saveData(data);
         },
