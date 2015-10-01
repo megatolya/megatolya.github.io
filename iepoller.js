@@ -23,16 +23,14 @@
 
         broadcast: function (eventName, eventData) {
             console.log('broadcasting', eventName, eventData);
-            try {
+            
             var data = this._getData();
             var events = data[this._id].events;
 
             events[eventName] = events[eventName] || [];
             events[eventName].push(eventData);
-            } catch (err) {
-                console.log('error!');
-                console.log(err);
-            }
+            
+            data[this._id].events = events;
             console.log('broadcast events[eventName]', events[eventName]);
             console.log('broadcast events[eventName] json', JSON.stringify(events[eventName]));
             console.log('typeof broadcast events[eventName]', typeof events[eventName]);
