@@ -32,7 +32,7 @@
         },
 
         _saveData: function (data) {
-            console.log('_saveData. data for this id', JSON.stringify(data));
+            console.log('_saveData. data for this id', JSON.stringify(data[this._id]));
             storage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
         },
 
