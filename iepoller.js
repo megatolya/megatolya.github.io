@@ -22,24 +22,17 @@
         },
 
         broadcast: function (eventName, eventData) {
-            console.log('broadcasting', eventName, eventData);
-            
             var data = this._getData();
             var events = data[this._id].events;
 
             events[eventName] = events[eventName] || [];
             events[eventName].push(eventData);
-            
             data[this._id].events = events;
-            
-            console.log('broadcast events[eventName] json', JSON.stringify(events[eventName]));
-            console.log('data[id] json', JSON.stringify(data[this._id]));
 
             this._saveData(data);
         },
 
         _saveData: function (data) {
-            console.log('_saveData. data for this id', JSON.stringify(data[this._id]));
             storage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
         },
 
@@ -59,7 +52,7 @@
 
             if (!data[id]) {
                 data[id] = {};
-                data[id].events = [];
+                data[id].events = {};
             }
 
             return data;
