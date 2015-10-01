@@ -30,9 +30,11 @@
             events[eventName] = events[eventName] || [];
             events[eventName].push(eventData);
             } catch (err) {
+                console.log('error!');
                 console.log(err);
             }
             console.log('broadcast events[eventName]', events[eventName]);
+            console.log('typeof broadcast events[eventName]', typeof events[eventName]);
             this._saveData(data);
         },
 
