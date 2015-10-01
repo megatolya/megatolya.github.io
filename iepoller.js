@@ -36,6 +36,9 @@
             console.log('broadcast events[eventName]', events[eventName]);
             console.log('broadcast events[eventName] json', JSON.stringify(events[eventName]));
             console.log('typeof broadcast events[eventName]', typeof events[eventName]);
+            console.log('data json', JSON.stringify(data));
+            console.log('data[id] json', JSON.stringify(data[this._id]));
+            console.log('data[id].events json', JSON.stringify(data[this._id].events));
             this._saveData(data);
         },
 
