@@ -1,30 +1,260 @@
-<!DOCTYPE html><html lang="ru"><meta charset="utf-8"><title>Анатолий Островский</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Анатолий Островский"><meta name="description" content="Домашняя страница Анатолия Островского"><link rel="stylesheet" href="/dist/app.css"><link rel="stylesheet" href="/bower_components/flag-icon-css/css/flag-icon.css"><script>(function (d, w, c) {
-    (w[c] = w[c] || []).push(function() {
-        try {
-            w.yaCounter23199109 = new Ya.Metrika({id:23199109,
-                    webvisor:true,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true});
-        } catch(e) { }
-    });
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player</title>
 
-    var n = d.getElementsByTagName("script")[0],
-        s = d.createElement("script"),
-        f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+    <style type="text/css">
+    html, body {
+        background: #000;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
 
-    if (w.opera == "[object Opera]") {
-        d.addEventListener("DOMContentLoaded", f, false);
-    } else { f(); }
-})(document, window, "yandex_metrika_callbacks");
-</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    object {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
 
-ga('create', 'UA-58004739-1', 'auto');
-ga('send', 'pageview');
-</script><script src="/dist/client.js"></script><body><div class="app__root___2mVqG" data-reactid=".jhp9a2zuo0" data-react-checksum="1266390077"><div class="app__wrapper___f--Dk" data-reactid=".jhp9a2zuo0.0"><header role="banner" class="header" data-reactid=".jhp9a2zuo0.0.0"><hgroup data-reactid=".jhp9a2zuo0.0.0.0"><h1 data-reactid=".jhp9a2zuo0.0.0.0.0"><a href="https://plus.google.com/+АнатолийОстровский" data-reactid=".jhp9a2zuo0.0.0.0.0.0">Анатолий Островский</a></h1><h2 data-reactid=".jhp9a2zuo0.0.0.0.1"><span data-reactid=".jhp9a2zuo0.0.0.0.1.0">aka </span><a href="https://github.com/megatolya" data-reactid=".jhp9a2zuo0.0.0.0.1.1">megatolya</a></h2></hgroup></header><main data-reactid=".jhp9a2zuo0.0.1"><article data-reactid=".jhp9a2zuo0.0.1.0"><p data-reactid=".jhp9a2zuo0.0.1.0.$0">Привет!</p><p data-reactid=".jhp9a2zuo0.0.1.0.$1">Меня зовут Толя Островский, и это портал имени меня.</p></article></main><noindex data-reactid=".jhp9a2zuo0.0.2"><script src="//instansive.com/widget/js/instansive.js" data-reactid=".jhp9a2zuo0.0.2.0"></script><iframe src="//instansive.com/widgets/25d3d7f5f809853073df9ced2a113c7e405a724b.html" scrolling="no" allowtransparency="true" class="instansive-widget" style="width:100%;border:0px;overflow:hidden;height:400px;" data-reactid=".jhp9a2zuo0.0.2.1"></iframe></noindex><div class="constants__push___3B_DS" data-reactid=".jhp9a2zuo0.0.3"></div></div><footer data-reactid=".jhp9a2zuo0.1"><div class="footer__follow___38Ua-" data-reactid=".jhp9a2zuo0.1.0"><iframe src="https://ghbtns.com/github-btn.html?user=megatolya&amp;type=follow&amp;count=true" frameborder="0" scrolling="0" width="160px" height="25px" data-reactid=".jhp9a2zuo0.1.0.0"></iframe></div><small class="footer__copyright___2ernx" data-reactid=".jhp9a2zuo0.1.1"><span data-reactid=".jhp9a2zuo0.1.1.0">© 2014–</span><span data-reactid=".jhp9a2zuo0.1.1.1">2015</span><span data-reactid=".jhp9a2zuo0.1.1.2"> </span><a href="mailto:forgetthisbox@gmail.com" data-reactid=".jhp9a2zuo0.1.1.3">Анатолий Островский</a></small><div class="footer__langChanger___3wmHa" data-reactid=".jhp9a2zuo0.1.2"><a class="" href="/en/" data-reactid=".jhp9a2zuo0.1.2.0"><span data-reactid=".jhp9a2zuo0.1.2.0.0">In english</span><span class="flag-icon flag-icon-gb lang__flagIcon___3QCLY" data-reactid=".jhp9a2zuo0.1.2.0.1"></span></a></div></footer></div></body></html>
+    embed {
+        height: 100%;
+        width: 100%;
+    }
+
+    iframe {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+    </style>
+</head>
+<body>
+    <div id="player"></div>
+
+    <script type="text/javascript" charset="utf-8" src="//yastatic.net/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="//yastatic.net/swfobject/2.1/swfobject.min.js"></script>
+
+    <script type="text/javascript">
+    function onSite() {
+        return true;
+    }
+
+    (function () {
+        'use strict';
+
+        var isPopup = (Boolean(window.opener) && window.name === 'kinopoisk-popup');
+        var transportWindow = isPopup ? window.opener : window.parent;
+        var isDebug = false;
+
+        var POPUP_WIDTH = 1000;
+        var POPUP_HEIGHT = 500;
+        var POPUP_LEFT = Math.max(((screen.availWidth - POPUP_WIDTH) / 2), 0);
+        var POPUP_TOP = Math.max(((screen.availHeight - POPUP_HEIGHT) / 2), 0);
+
+        if (isPopup) {
+            window.resizeTo(POPUP_WIDTH, POPUP_HEIGHT);
+            window.moveTo(POPUP_LEFT, POPUP_TOP);
+        }
+
+        function debug(level) {
+            if (isDebug && 'console' in window) {
+                var args = Array.prototype.slice.call(arguments, 1);
+                args[0] = '[player] ' + args[0];
+
+                console[level].apply(console, args);
+            }
+        }
+
+        function emit(msg) {
+            transportWindow.postMessage(msg, '*');
+        }
+
+        function requestPlayerVersion(useLatestPlayer) {
+            var deferred = $.Deferred();
+
+            if (useLatestPlayer) {
+                deferred.resolve('//betastatic.kp.yandex.net/swf/cinemaplayer/13_102/v-1/cinemaplayer.swf');
+            } else {
+                var jsonpPlayerInfo = '//static.kp.yandex.net/swf/cinemaplayer/13_102/info';
+                var playerURL = '//static.kp.yandex.net/swf/cinemaplayer/13_102/v-{version}/cinemaplayer.swf';
+                var defaultPlayerURL = playerURL.replace('{version}', '1');
+
+                // @see http://stackoverflow.com/questions/19035557/jsonp-request-error-handling
+                var jsonpTimeoutId = setTimeout(function () {
+                    deferred.resolve(defaultPlayerURL);
+                }, 3000);
+
+                $.ajax({
+                    url: jsonpPlayerInfo,
+                    dataType: 'jsonp',
+                    jsonp: false,
+                    jsonpCallback: 'getInfo',
+                    success: function (res) {
+                        clearTimeout(jsonpTimeoutId);
+
+                        playerURL = playerURL.replace('{version}', '$' + res.version);
+                        deferred.resolve(playerURL);
+                    },
+                    error: function () {
+                        deferred.resolve(defaultPlayerURL);
+                    }
+                });
+            }
+
+            return deferred;
+        }
+
+        function embedPlayer(playerURL, flashVars) {
+            var params = {
+                allowScriptAccess: 'always',
+                allowfullscreen: 'true',
+                hasPriority: 'true',
+                wmode: 'window'
+            };
+
+            flashVars.onReady = 'FlashAPI.onPlayerReady';
+            flashVars.onStateChange = 'FlashAPI.onStateChange';
+            flashVars.onAdStateChange = 'FlashAPI.onAdStateChange';
+            flashVars.onEpisodeChange = 'FlashAPI.onEpisodeChange';
+
+            var hidden = ['rotate', 'share'];
+            if (isPopup) {
+                hidden.push('close');
+            }
+            flashVars.hidden = hidden.join(',');
+
+            // https://st.yandex-team.ru/KINOFRONT-3459
+            // http://codeblow.com/questions/strange-opera-swfobject-display-problem/
+            //swfobject.switchOffAutoHideShow();
+
+            console.log('before embedSWF');
+            swfobject.embedSWF('http:' + playerURL, 'player', 900, 500, '10.0.0', null, flashVars, params);
+            console.log(playerURL);
+            //swfobject.embedSWF('http://www.w3schools.com/tags/helloworld.swf', 'player', 100, 100, '10.0.0', null);
+            console.log('after embedSWF');
+        }
+
+        function changePlayingState() {
+            var player = $('#player').get(0);
+
+            if (player.getPlayerState() === 'play') {
+                player.pauseVideo();
+            } else {
+                player.playVideo();
+            }
+        }
+
+        function pauseVideo() {
+            var player = $('#player').get(0);
+            player.pauseVideo();
+        }
+
+        // parse GET params
+        var search = location.search.replace(/^\?/, '').split('&');
+        var query = {};
+
+        search.forEach(function (part) {
+            part = part.split('=', 2).map(decodeURIComponent);
+            query[part[0]] = part[1];
+        });
+
+        isDebug = (query.debug !== undefined);
+
+        // where will be flashapi.js loaded from
+        var baseorigin = 'http://beta.kinopoisk.ru';
+        if (query.baseorigin) {
+            if (/\.kinopoisk\.ru(:[\d]+)?$/.test(query.baseorigin)) {
+                baseorigin = query.baseorigin;
+            } else {
+                debug('warn', 'baseorigin param is not valid: %s', query.baseorigin);
+            }
+        } else {
+            debug('warn', 'baseorigin param is not specified. Loading FlashAPI from beta.kinopoisk.ru');
+        }
+
+        // which host should we listen to requests from
+        var useLatestPlayer = (query.latest !== undefined);
+
+        // baseorigin should be available inside FlashAPI
+        window.baseorigin = baseorigin;
+
+        var flashapiLoaded = $.Deferred();
+        var scriptElem = document.createElement('script');
+        scriptElem.src = baseorigin + '/cinemaplayer/flashapi.js';
+        scriptElem.type = 'text/javascript';
+
+        // unfortunately this doesn't work in IE8
+        // @see https://msdn.microsoft.com/en-us/library/hh180173(v=vs.85).aspx
+        scriptElem.onload = function () {
+            debug('log', 'FlashAPI loaded');
+            flashapiLoaded.resolve();
+        };
+
+        document.body.appendChild(scriptElem);
+
+        $.when(requestPlayerVersion(useLatestPlayer), flashapiLoaded).done(function (playerURL) {
+            debug('log', 'URL used: %s', playerURL);
+            emit({type: 'player-prerequisites-loaded'});
+
+            if (isPopup) {
+                debug('log', 'using popup mode');
+            } else {
+                debug('log', 'using iframe mode');
+            }
+
+            $(window).on('message', function onMessageReceive(evt) {
+                debug('log', 'message received: %o', evt.originalEvent);
+
+                if (evt.originalEvent.origin !== baseorigin) {
+                    debug('warn', 'origin mismatch: expected %s, got %s', baseorigin, evt.originalEvent.origin);
+                    return;
+                }
+
+                var originalEvt = evt.originalEvent;
+                var evtData = originalEvt.data;
+
+                debug('log', 'processing message: %o', evtData);
+
+                switch (evtData.action) {
+                    case 'show-player':
+                        clearTimeout(localStorageTransportTimeout);
+                        embedPlayer(playerURL, evtData.flashVars);
+                        try {
+                            history.replaceState(null, evtData.title, document.location.href);
+                        } catch (ex) {}
+                        document.querySelector('title').innerHTML = evtData.title;
+                        break;
+
+                    case 'keydown-space':
+                        if (!isPopup) {
+                            changePlayingState();
+                        }
+
+                        break;
+
+                    case 'video-pause':
+                        if (!isPopup) {
+                            pauseVideo();
+                        }
+
+                        break;
+                }
+            });
+
+            var localStorageTransportTimeout = setTimeout(function localStorageTransportCallback() {
+                // fallback to communication with iframe/localstorage for ie10/11
+                debug('log', 'fallback to localStorage transport...');
+
+                var iframe = $('<iframe/>', {
+                    src: baseorigin + '/cinemaplayer/player_mediator.html'
+                });
+                $('body').append(iframe);
+                transportWindow = iframe[0].contentWindow;
+                FlashAPI.env._setTransportWindow(transportWindow);
+            }, 1000);
+        });
+    })();
+    </script>
+</body>
+</html>
