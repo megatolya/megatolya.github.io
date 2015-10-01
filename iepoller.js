@@ -7,7 +7,7 @@
         this._queue = [];
         this._handlers = {};
         this._interval = setInterval(this._pollStorage.bind(this), POLLING_INTERVAL);
-        this._id = ('' + Date.now() + Math.random()) || id;
+        window._iepollerid = this._id = ('' + Date.now() + Math.random()) || id;
     }
 
     IEPoller.prototype = {
@@ -32,6 +32,7 @@
         },
 
         _saveData: function (data) {
+            console.log('_saveData. data for this id', JSON.stringify(data));
             storage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
         },
 
@@ -71,6 +72,11 @@
 
                 Object.keys(eventsToHandle).forEach(function (eventName) {
                     if (!(eventName in handlers) || !eventsToHandle[eventName].length) {
+                        if (!(eventName in handlers)) {
+                            console.log('no handlers for', eventName);
+                        } else {
+                            console.log('no events of', eventName);
+                        }
                         return;
                     }
 
