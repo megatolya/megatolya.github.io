@@ -28,6 +28,7 @@
 
             events[eventName] = events[eventName] || [];
             events[eventName].push(eventData);
+            console.log('broadcast events[eventName]', events[eventName]);
             this._saveData(data);
         },
 
