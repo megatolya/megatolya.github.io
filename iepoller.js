@@ -70,6 +70,7 @@
 
                 var eventsToHandle = data[id].events;
 
+                alert('eventsToHandle ' + JSON.stringify(eventsToHandle));
                 Object.keys(eventsToHandle).forEach(function (eventName) {
                     if (!(eventName in handlers) || !eventsToHandle[eventName].length) {
                         if (!(eventName in handlers)) {
