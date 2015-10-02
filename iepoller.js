@@ -3,17 +3,17 @@
     var POLLING_INTERVAL = 1000;
     var storage = this.localStorage;
     var pollers = {};
-    
+
     setInterval(function () {
         Object.keys(pollers).forEach(function (pollerId) {
-           pollers[pollerId]._pollStorage(); 
+           pollers[pollerId]._pollStorage();
         });
     }, POLLING_INTERVAL);
 
     function IEPoller(id) {
         this._queue = [];
         this._handlers = {};
-        
+
         window._iepollerid = this._id = id || ('' + Date.now() + Math.random());
     }
 
@@ -29,7 +29,6 @@
         },
 
         broadcast: function (eventName, eventData) {
-            alert('broadcast ' + eventName + ' ' + JSON.stringify(eventData));
             var data = this._getData();
             var events = data[this._id].events;
 
@@ -78,7 +77,6 @@
 
                 var eventsToHandle = data[id].events;
 
-                // console.log('eventsToHandle ', JSON.stringify(eventsToHandle));
                 Object.keys(eventsToHandle).forEach(function (eventName) {
                     if (!(eventName in handlers) || !eventsToHandle[eventName].length) {
                         if (!(eventName in handlers)) {

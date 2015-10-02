@@ -1,0 +1,19 @@
+
+<script src="sklad.js"></script>
+<script src="iepoller2.js"></script>
+<script>
+
+var testPoller = iepoller('test');
+var testPoller2 = iepoller('test2');
+testPoller.on('flash', function (data) {
+    console.log('alalalal');
+});
+testPoller.broadcast('flash', {
+    asda: '123'
+});
+testPoller.broadcast('flash', {
+    asda: '123'
+});
+testPoller2.broadcast('flash2', {asd: '123'});
+testPoller2.broadcast('flash', {asd: '123'});
+</script>
