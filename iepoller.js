@@ -100,6 +100,6 @@
     };
 
     window.iepoller = function (id) {
-        return new IEPoller();
+        return new IEPoller(id);
     };
 })();
