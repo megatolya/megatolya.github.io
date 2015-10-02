@@ -29,6 +29,7 @@
         },
 
         broadcast: function (eventName, eventData) {
+            console.log('broadcast', eventName, JSON.stringify(eventData));
             var data = this._getData();
             var events = data[this._id].events;
 
