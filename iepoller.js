@@ -7,7 +7,7 @@
         this._queue = [];
         this._handlers = {};
         this._interval = setInterval(this._pollStorage.bind(this), POLLING_INTERVAL);
-        window._iepollerid = this._id = ('' + Date.now() + Math.random()) || id;
+        window._iepollerid = this._id = id || ('' + Date.now() + Math.random());
     }
 
     IEPoller.prototype = {
@@ -99,5 +99,7 @@
         }
     };
 
-    window.iepoller = new IEPoller();
+    window.iepoller = function (id) {
+        return new IEPoller();
+    };
 })();
