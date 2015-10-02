@@ -2,11 +2,18 @@
     var LOCAL_STORAGE_KEY = '__iepoller';
     var POLLING_INTERVAL = 1000;
     var storage = this.localStorage;
+    var pollers = {};
+    
+    setInterval(function () {
+        Object.keys(pollers).forEach(function (pollerId) {
+           pollers[pollerId]._pollStorage(); 
+        });
+    }, POLLING_INTERVAL);
 
     function IEPoller(id) {
         this._queue = [];
         this._handlers = {};
-        this._interval = setInterval(this._pollStorage.bind(this), POLLING_INTERVAL);
+        
         window._iepollerid = this._id = id || ('' + Date.now() + Math.random());
     }
 
@@ -100,6 +107,6 @@
     };
 
     window.iepoller = function (id) {
-        return new IEPoller(id);
+        return pollers[id] = pollers[id] || new IEPoller(id);
     };
 })();
