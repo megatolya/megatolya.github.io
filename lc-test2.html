@@ -3,8 +3,11 @@
 <script src="local-connection.js"></script>
 <script>
 
-var testPoller = new LocalConnection('popup', 'main');
-testPoller.broadcast('hello', {world: true});
+var testPoller = getLocalConnection('popup', 'main');
+testPoller.emit('hello-from-popup', {world: true});
+testPoller.on('hello-from-main', function (data) {
+    console.log('omg event: hello-from-main', data);
+});
 
 </script>
 

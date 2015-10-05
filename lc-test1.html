@@ -3,7 +3,10 @@
 <script src="local-connection.js"></script>
 <script>
 
-var testPoller = new LocalConnection('main', 'popup');
-testPoller.broadcast('hello', {world: true});
+var testPoller = getLocalConnection('main', 'popup');
+testPoller.emit('hello-from-main', {world: true});
+testPoller.on('hello-from-popup', function (data) {
+    console.log('omg event: hello-from-popup', data);
+});
 </script>
 
