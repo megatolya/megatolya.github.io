@@ -3,6 +3,8 @@
 <script src="local-connection.js"></script>
 <script>
 
-var testPoller = new LocalConnection('main', 'popup');
+var testPoller = new LocalConnection('popup', 'main');
 testPoller.broadcast('hello', {world: true});
+
 </script>
+
