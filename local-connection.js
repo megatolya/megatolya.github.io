@@ -1,7 +1,7 @@
-(function (global) {
+(function () {
     var connections = {};
 
-    global.onLocalConnection = function (name, data) {
+    window.onLocalConnection = function (name, data) {
         console.log('onLocalConnection', name);
         Object.keys(connections).forEach(function (connectionName) {
             var connection = connections[connectionName];
@@ -25,7 +25,7 @@
 
     var OBJECT_ID = 'local-connection';
 
-    global.LocalConnection = function LocalConnection(outputChannel, inputChannel) {
+    window.LocalConnection = function LocalConnection(outputChannel, inputChannel) {
         this._handlers = {};
 
         window.addEventListener('DOMContentLoaded', function () {
@@ -99,9 +99,9 @@
         }
     };
 
-    global.getLocalConnection = function (input, output) {
+    window.getLocalConnection = function (input, output) {
         var id = input + output;
         var output = connections[id] = connections[id] || new LocalConnection(input, output);
         return output;
     };
-})(window);
+})();
