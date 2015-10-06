@@ -1,12 +1,11 @@
 (function () {
     var connections = {};
     var loaded = false;
-    
+
     function log (msg) {
         onReady(function () {
             var textarea = document.getElementById('textarea');
             textarea.value += msg + '\n';
-            
         });
     }
 
@@ -23,7 +22,7 @@
             connection._onMessage(name, data);
         });
     };
-    
+
     document.addEventListener('DOMContentLoaded', function () {
         var elem = document.createElement('textarea');
         elem.id = 'textarea';
@@ -55,17 +54,17 @@
         } else {
             onLoad();
         }
-        
+
         function onLoad() {
             var elem = document.createElement('div');
             var id = 'local-connection-placeholder';
-    
+
             elem.id = id;
             elem.setAttribute('name', id);
             document.body.appendChild(elem);
-    
+
             swfobject.embedSWF(
-                'http://tolya.me/lc_debug.swf',
+                'http://tolya.me/lc_release.swf',
                 'local-connection-placeholder',
                 '100%',
                 '100%',
@@ -89,7 +88,7 @@
                     align: 'middle'
                 }
             );
-    
+
             // TODO onload
             setTimeout(function () {
                 ready = true;
@@ -97,7 +96,7 @@
                     callback();
                 });
             }, 5000);
-            
+
             console.log('swf injected');
         }
     };
