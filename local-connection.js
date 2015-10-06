@@ -3,7 +3,7 @@
     var loaded = false;
 
     window.onLocalConnection = function (name, data) {
-        console.log('onLocalConnection', name);
+        alert('incoming message ' + JSON.stringify(data));
         Object.keys(connections).forEach(function (connectionName) {
             var connection = connections[connectionName];
 
