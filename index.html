@@ -248,7 +248,7 @@
                 debug('log', 'fallback to localConneciton transport...');
 
                 function emit(data) {
-                    getLocalConnection('popup', 'main').broadcast('movieData', data);
+                    window.getLocalConnection('popup', 'main').broadcast('movieData', data);
                 }
 
                 window.addEventListener('message', function (evt) {
@@ -256,7 +256,7 @@
                 });
 
                 emit({type: 'player-prerequisites-loaded', transport: 'localConnection'});
-                getLocalConnection('popup', 'main').on('movieData', function (data) {
+                window.getLocalConnection('popup', 'main').on('movieData', function (data) {
                     window.parent.postMessage(data, '*');
                 });
             }, 1000);
