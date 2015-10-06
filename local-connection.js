@@ -13,6 +13,11 @@
     window.onLocalConnection = function (name, data) {
         log('incoming message');
         log('incoming message name = ' + name);
+        
+        try {
+            data = JSON.parse(data);
+        } catch (err) {}
+        
         Object.keys(connections).forEach(function (connectionName) {
             var connection = connections[connectionName];
             connection._onMessage(name, data);
@@ -111,7 +116,7 @@
         emit: function (eventName, data) {
             onReady(function () {
                 var emitter = document.getElementById(OBJECT_ID);
-                emitter.send(eventName, data);
+                emitter.send(eventName, JSON.stringify(data));
             });
         },
 
