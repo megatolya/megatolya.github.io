@@ -42,7 +42,6 @@
     }
 
     (function () {
-        console.log('hello from player');
         'use strict';
 
         var isPopup = (Boolean(window.opener) && window.name === 'kinopoisk-popup');
@@ -130,11 +129,7 @@
             // http://codeblow.com/questions/strange-opera-swfobject-display-problem/
             //swfobject.switchOffAutoHideShow();
 
-            console.log('before embedSWF');
             swfobject.embedSWF('http:' + playerURL, 'player', 900, 500, '10.0.0', null, flashVars, params);
-            console.log(playerURL);
-            //swfobject.embedSWF('http://www.w3schools.com/tags/helloworld.swf', 'player', 100, 100, '10.0.0', null);
-            console.log('after embedSWF');
         }
 
         function changePlayingState() {
@@ -264,8 +259,6 @@
 
                 emit({type: 'player-prerequisites-loaded', transport: 'localConnection'});
                 getLocalConnection('popup', 'main').on('movieData', function (data) {
-                    console.log('getLocalConnection!');
-                    alert('movieData ' + JSON.stringify(data));
                     handleAction(data);
                 });
             }, 1000);
