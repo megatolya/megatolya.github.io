@@ -24,55 +24,63 @@
 
 
     var OBJECT_ID = 'local-connection';
+    
+    function onLoad() {
+ 
+        alert('onLoad');
+        var elem = document.createElement('div');
+        var id = 'local-connection-placeholder';
+
+        elem.id = id;
+        elem.setAttribute('name', id);
+        document.body.appendChild(elem);
+
+        alert('swfobject.embedSWF');
+        swfobject.embedSWF(
+            'http://tolya.me/lc_debug.swf',
+            'local-connection-placeholder',
+            '100%',
+            '100%',
+            // For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection.
+            '0.0.0',
+            // To use express install, set to playerProductInstall.swf, otherwise the empty string.
+            '',
+            {
+                onMessage: 'onLocalConnection',
+                'in_channel': inputChannel,
+                'out_channel': outputChannel
+            },
+            {
+                quality: 'high',
+                allowScriptAccess: 'always',
+                allowFullScreen: 'true'
+            },
+            {
+                id: OBJECT_ID,
+                name: OBJECT_ID,
+                align: 'middle'
+            }
+        );
+
+        alert('swfobject.embedSWF done');
+        // TODO onload
+        setTimeout(function () {
+            ready = true;
+            queue.forEach(function (callback) {
+                callback();
+            });
+        }, 300);
+    
+    }
 
     window.LocalConnection = function LocalConnection(outputChannel, inputChannel) {
         this._handlers = {};
 
-        window.addEventListener('load', function () {
-            alert('DOMContentLoaded');
-            var elem = document.createElement('div');
-            var id = 'local-connection-placeholder';
-
-            elem.id = id;
-            elem.setAttribute('name', id);
-            document.body.appendChild(elem);
-
-            alert('swfobject.embedSWF');
-            swfobject.embedSWF(
-                'http://tolya.me/lc_debug.swf',
-                'local-connection-placeholder',
-                '100%',
-                '100%',
-                // For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection.
-                '0.0.0',
-                // To use express install, set to playerProductInstall.swf, otherwise the empty string.
-                '',
-                {
-                    onMessage: 'onLocalConnection',
-                    'in_channel': inputChannel,
-                    'out_channel': outputChannel
-                },
-                {
-                    quality: 'high',
-                    allowScriptAccess: 'always',
-                    allowFullScreen: 'true'
-                },
-                {
-                    id: OBJECT_ID,
-                    name: OBJECT_ID,
-                    align: 'middle'
-                }
-            );
-
-            alert('swfobject.embedSWF done');
-            // TODO onload
-            setTimeout(function () {
-                ready = true;
-                queue.forEach(function (callback) {
-                    callback();
-                });
-            }, 300);
-        });
+        try {
+            window.addEventListener('load', onLoad, false);
+        } catch (err) {
+            alert(err);
+        }
     };
 
     LocalConnection.prototype = {
