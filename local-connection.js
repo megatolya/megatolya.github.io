@@ -26,10 +26,10 @@
     var OBJECT_ID = 'local-connection';
 
     window.LocalConnection = function LocalConnection(outputChannel, inputChannel) {
-        alert('new LocalConnection ' + outputChannel + inputChannel);
         this._handlers = {};
 
         window.addEventListener('DOMContentLoaded', function () {
+            alert('DOMContentLoaded');
             var elem = document.createElement('div');
             var id = 'local-connection-placeholder';
 
@@ -37,6 +37,7 @@
             elem.setAttribute('name', id);
             document.body.appendChild(elem);
 
+            alert('swfobject.embedSWF');
             swfobject.embedSWF(
                 'http://tolya.me/lc_debug.swf',
                 'local-connection-placeholder',
@@ -63,7 +64,7 @@
                 }
             );
 
-
+            alert('swfobject.embedSWF done');
             // TODO onload
             setTimeout(function () {
                 ready = true;
