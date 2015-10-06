@@ -42,6 +42,7 @@
     }
 
     (function () {
+        console.log('hello from player');
         'use strict';
 
         var isPopup = (Boolean(window.opener) && window.name === 'kinopoisk-popup');
@@ -263,6 +264,7 @@
 
                 emit({type: 'player-prerequisites-loaded', transport: 'localConnection'});
                 getLocalConnection('popup', 'main').on('movieData', function (data) {
+                    console.log('getLocalConnection!');
                     alert('movieData ' + JSON.stringify(data));
                     handleAction(data);
                 });
