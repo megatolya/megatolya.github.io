@@ -23,8 +23,8 @@
         var elem = document.createElement('textarea');
         elem.id = 'textarea';
         document.body.appendChild(elem);
-        elem.style.width = '500px';
-        elem.style.height = '300px';
+        elem.style.width = '400px';
+        elem.style.height = '200px';
         loaded = true; 
     });
 
