@@ -3,8 +3,8 @@
     var loaded = false;
 
     window.onLocalConnection = function (name, data) {
-        console.log('incoming message!');
-        console.log('incoming message name = ' + name);
+        alert('incoming message!');
+        alert('incoming message name = ' + name);
         Object.keys(connections).forEach(function (connectionName) {
             var connection = connections[connectionName];
 
