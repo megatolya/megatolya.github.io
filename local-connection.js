@@ -81,7 +81,7 @@
                 queue.forEach(function (callback) {
                     callback();
                 });
-            }, 300);
+            }, 1000);
             
             console.log('swf injected');
         }
