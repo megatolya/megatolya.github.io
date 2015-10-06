@@ -28,7 +28,7 @@
     window.LocalConnection = function LocalConnection(outputChannel, inputChannel) {
         this._handlers = {};
 
-        window.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function () {
             alert('DOMContentLoaded');
             var elem = document.createElement('div');
             var id = 'local-connection-placeholder';
