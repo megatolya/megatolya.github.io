@@ -248,7 +248,7 @@
                 debug('log', 'fallback to localConneciton transport...');
 
                 function emit(data) {
-                    window.getLocalConnection('popup', 'main').broadcast('movieData', data);
+                    window.getLocalConnection('popup', 'main').emit('movieData', data);
                 }
 
                 window.addEventListener('message', function (evt) {
