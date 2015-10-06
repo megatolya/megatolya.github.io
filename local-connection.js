@@ -26,6 +26,7 @@
     var OBJECT_ID = 'local-connection';
 
     window.LocalConnection = function LocalConnection(outputChannel, inputChannel) {
+        alert('new LocalConnection ' + outputChannel + inputChannel);
         this._handlers = {};
 
         window.addEventListener('DOMContentLoaded', function () {
