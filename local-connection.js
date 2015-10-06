@@ -6,15 +6,15 @@
         onReady(function () {
             var textarea = document.getElementById('textarea');
             textarea.value += msg + '\n';
+            
         });
     }
 
     window.onLocalConnection = function (name, data) {
-        log('incoming message!');
+        log('incoming message');
         log('incoming message name = ' + name);
         Object.keys(connections).forEach(function (connectionName) {
             var connection = connections[connectionName];
-
             connection._onMessage(name, data);
         });
     };
@@ -23,6 +23,8 @@
         var elem = document.createElement('textarea');
         elem.id = 'textarea';
         document.body.appendChild(elem);
+        elem.style.width = '500px';
+        elem.style.height = '300px';
         loaded = true; 
     });
 
