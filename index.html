@@ -198,12 +198,14 @@
             function handleAction(evtData) {
                 switch (evtData.action) {
                     case 'show-player':
+                        alert('show-player');
                         clearTimeout(localConnectionTransportTimeout);
                         embedPlayer(playerURL, evtData.flashVars);
                         try {
                             history.replaceState(null, evtData.title, document.location.href);
                         } catch (ex) {}
                         document.querySelector('title').innerHTML = evtData.title;
+                        alert('success');
                         break;
 
                     case 'keydown-space':
@@ -261,7 +263,7 @@
 
                 emit({type: 'player-prerequisites-loaded', transport: 'localConnection'});
                 getLocalConnection('popup', 'main').on('movieData', function (data) {
-                    console.log('movieData', data);
+                    alert('movieData ' + JSON.stringify(data));
                     handleAction(data);
                 });
             }, 1000);
