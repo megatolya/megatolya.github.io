@@ -25,8 +25,18 @@
 
     var OBJECT_ID = 'local-connection';
     
-    function onLoad() {
- 
+    
+
+    window.LocalConnection = function LocalConnection(outputChannel, inputChannel) {
+        this._handlers = {};
+
+        try {
+            window.addEventListener('load', onLoad, false);
+        } catch (err) {
+            alert(err);
+        }
+        
+        function onLoad() {
         alert('onLoad');
         var elem = document.createElement('div');
         var id = 'local-connection-placeholder';
@@ -72,15 +82,6 @@
         }, 300);
     
     }
-
-    window.LocalConnection = function LocalConnection(outputChannel, inputChannel) {
-        this._handlers = {};
-
-        try {
-            window.addEventListener('load', onLoad, false);
-        } catch (err) {
-            alert(err);
-        }
     };
 
     LocalConnection.prototype = {
