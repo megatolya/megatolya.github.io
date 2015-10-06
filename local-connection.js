@@ -28,10 +28,7 @@
         callback();
     }
 
-
     var OBJECT_ID = 'local-connection';
-    
-    
 
     window.LocalConnection = function LocalConnection(outputChannel, inputChannel) {
         this._handlers = {};
@@ -82,7 +79,7 @@
                 queue.forEach(function (callback) {
                     callback();
                 });
-            }, 1000);
+            }, 5000);
             
             console.log('swf injected');
         }
