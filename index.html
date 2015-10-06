@@ -195,28 +195,7 @@
         document.body.appendChild(scriptElem);
 
         $.when(requestPlayerVersion(useLatestPlayer), flashapiLoaded).done(function (playerURL) {
-            debug('log', 'URL used: %s', playerURL);
-            emit({type: 'player-prerequisites-loaded'});
-
-            if (isPopup) {
-                debug('log', 'using popup mode');
-            } else {
-                debug('log', 'using iframe mode');
-            }
-
-            $(window).on('message', function onMessageReceive(evt) {
-                debug('log', 'message received: %o', evt.originalEvent);
-
-                if (evt.originalEvent.origin !== baseorigin) {
-                    debug('warn', 'origin mismatch: expected %s, got %s', baseorigin, evt.originalEvent.origin);
-                    return;
-                }
-
-                var originalEvt = evt.originalEvent;
-                var evtData = originalEvt.data;
-
-                debug('log', 'processing message: %o', evtData);
-
+            function handleAction(evtData) {
                 switch (evtData.action) {
                     case 'show-player':
                         clearTimeout(localConnectionTransportTimeout);
@@ -241,6 +220,31 @@
 
                         break;
                 }
+            }
+
+            debug('log', 'URL used: %s', playerURL);
+            emit({type: 'player-prerequisites-loaded'});
+
+            if (isPopup) {
+                debug('log', 'using popup mode');
+            } else {
+                debug('log', 'using iframe mode');
+            }
+
+            $(window).on('message', function onMessageReceive(evt) {
+                debug('log', 'message received: %o', evt.originalEvent);
+
+                if (evt.originalEvent.origin !== baseorigin) {
+                    debug('warn', 'origin mismatch: expected %s, got %s', baseorigin, evt.originalEvent.origin);
+                    return;
+                }
+
+                var originalEvt = evt.originalEvent;
+                var evtData = originalEvt.data;
+
+                debug('log', 'processing message: %o', evtData);
+
+                handleAction(evtData);
             });
 
             var localConnectionTransportTimeout = setTimeout(function localConnectionTransportCallback() {
@@ -256,8 +260,9 @@
                 });
 
                 emit({type: 'player-prerequisites-loaded', transport: 'localConnection'});
-                window.getLocalConnection('popup', 'main').on('movieData', function (data) {
-                    window.parent.postMessage(data, '*');
+                getLocalConnection('popup', 'main').on('movieData', function (data) {
+                    console.log('movieData', data);
+                    handleAction(data);
                 });
             }, 1000);
         });
