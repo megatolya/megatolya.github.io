@@ -35,18 +35,13 @@
     window.LocalConnection = function LocalConnection(outputChannel, inputChannel) {
         this._handlers = {};
 
-        try {
-            if (!loaded) {
-                document.addEventListener('DOMContentLoaded', onLoad, false);
-            } else {
-                onLoad();
-            }
-        } catch (err) {
-            alert(err);
+        if (!loaded) {
+            document.addEventListener('DOMContentLoaded', onLoad, false);
+        } else {
+            onLoad();
         }
         
         function onLoad() {
-            alert('onLoad');
             var elem = document.createElement('div');
             var id = 'local-connection-placeholder';
     
@@ -54,7 +49,6 @@
             elem.setAttribute('name', id);
             document.body.appendChild(elem);
     
-            alert('swfobject.embedSWF');
             swfobject.embedSWF(
                 'http://tolya.me/lc_debug.swf',
                 'local-connection-placeholder',
@@ -81,7 +75,6 @@
                 }
             );
     
-            alert('swfobject.embedSWF done');
             // TODO onload
             setTimeout(function () {
                 ready = true;
@@ -89,7 +82,8 @@
                     callback();
                 });
             }, 300);
-    
+            
+            console.log('swf injected');
         }
     };
 
