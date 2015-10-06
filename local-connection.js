@@ -1,10 +1,17 @@
 (function () {
     var connections = {};
     var loaded = false;
+    
+    function log (msg) {
+        onReady(function () {
+            var textarea = document.getElementById('textarea');
+            textarea.value += msg + '\n';
+        });
+    }
 
     window.onLocalConnection = function (name, data) {
-        alert('incoming message!');
-        alert('incoming message name = ' + name);
+        log('incoming message!');
+        log('incoming message name = ' + name);
         Object.keys(connections).forEach(function (connectionName) {
             var connection = connections[connectionName];
 
@@ -13,7 +20,10 @@
     };
     
     document.addEventListener('DOMContentLoaded', function () {
-       loaded = true; 
+        var elem = document.createElement('textarea');
+        elem.id = 'textarea';
+        document.body.appendChild(elem);
+        loaded = true; 
     });
 
     var ready = false;
