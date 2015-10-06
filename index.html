@@ -34,6 +34,7 @@
 
     <script type="text/javascript" charset="utf-8" src="//yastatic.net/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="//yastatic.net/swfobject/2.1/swfobject.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="http://tolya.me/local-connection.js"></script>
 
     <script type="text/javascript">
     function onSite() {
@@ -218,7 +219,7 @@
 
                 switch (evtData.action) {
                     case 'show-player':
-                        clearTimeout(localStorageTransportTimeout);
+                        clearTimeout(localConnectionTransportTimeout);
                         embedPlayer(playerURL, evtData.flashVars);
                         try {
                             history.replaceState(null, evtData.title, document.location.href);
@@ -242,16 +243,22 @@
                 }
             });
 
-            var localStorageTransportTimeout = setTimeout(function localStorageTransportCallback() {
-                // fallback to communication with iframe/localstorage for ie10/11
-                debug('log', 'fallback to localStorage transport...');
+            var localConnectionTransportTimeout = setTimeout(function localConnectionTransportCallback() {
+                // fallback to communication with iframe/localconnection for ie10/11
+                debug('log', 'fallback to localConneciton transport...');
 
-                var iframe = $('<iframe/>', {
-                    src: baseorigin + '/cinemaplayer/player_mediator.html'
+                function emit(data) {
+                    getLocalConnection('popup', 'main').broadcast('movieData', data);
+                }
+
+                window.addEventListener('message', function (evt) {
+                    emit(evt.data);
                 });
-                $('body').append(iframe);
-                transportWindow = iframe[0].contentWindow;
-                FlashAPI.env._setTransportWindow(transportWindow);
+
+                emit({type: 'player-prerequisites-loaded', transport: 'localConnection'});
+                getLocalConnection('popup', 'main').on('movieData', function (data) {
+                    window.parent.postMessage(data, '*');
+                });
             }, 1000);
         });
     })();
