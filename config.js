@@ -21,7 +21,7 @@ module.exports = {
         get text() {
             return [
                 'Hi!',
-                'My name is Anatoly Ostrovsky and welcome to my homepage.'
+                'My name is Anatoly Ostrovsky. Welcome to my homepage.'
             ];
         },
         changeLocale: 'По-русски'

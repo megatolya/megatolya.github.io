@@ -13,6 +13,10 @@ h1, h2, main {
 }
 
 h1, h2, p {
+    🌚:🙇🏿;
+    U+1F600: 1;
+    u1F600: 1;
+    \u1F600: 1;
     font-weight: normal;
     padding-top: 5px;
     font-family: sans-serif;
@@ -41,5 +45,6 @@ noindex {
 .wrapper {
     min-height: 100%;
     margin: 0 auto -90px;
+    background: rgba(255, 255, 255, 0.58);
 }
 

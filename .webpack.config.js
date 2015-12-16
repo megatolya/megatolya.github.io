@@ -33,6 +33,10 @@ function getConfig(target) {
                     test: /\.css$/,
                     loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
                 },
+                {
+                    test: /\.png$/,
+                    loader: "url-loader?limit=100000"
+                }
             ]
         },
         output: {
