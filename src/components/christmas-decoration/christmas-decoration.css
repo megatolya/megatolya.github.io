@@ -1,0 +1,9 @@
+.christmas-decoration {
+    background: url(./christmas-decoration.png);
+    height: 172px;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: -71px;
+    left: 0;
+}
