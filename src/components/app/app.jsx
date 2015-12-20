@@ -13,9 +13,8 @@ export default class App extends Component {
     render() {
         return (
             <div className={styles.root}>
-                <ChristmasDecoration />
                 <div className={styles.wrapper}>
-                    <Header lang={this.props.lang}/>
+                    <ChristmasDecoration /> <Header lang={this.props.lang}/>
                     <MainInfo lang={this.props.lang}/>
                     <InstagramFrame lang={this.props.lang}/>
                     <div className={constants.push}/>
