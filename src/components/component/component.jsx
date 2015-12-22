@@ -1,4 +1,4 @@
-let {Component} = require('react');
+import {Component} from 'react';
 
 export default class MegatolyaComponent extends Component {
     getLocalizedData(name) {

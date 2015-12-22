@@ -1,5 +1,5 @@
-let React = require('react/addons');
-let Component = require('../component/component.jsx');
+import React from 'react/addons';
+import Component from '../component/component.jsx';
 
 export default class Header extends Component {
     render() {
