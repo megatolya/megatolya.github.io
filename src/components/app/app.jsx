@@ -3,7 +3,6 @@ import Component from '../component/component.jsx';
 import Header from '../header/header.jsx';
 import MainInfo from '../main-info/main-info.jsx';
 import Footer from '../footer/footer.jsx';
-import ChristmasDecoration from '../christmas-decoration/сhristmas-decoration.jsx';
 import InstagramFrame from '../instagram-frame/instagram-frame.jsx';
 
 import styles from './app.css';
@@ -14,7 +13,7 @@ export default class App extends Component {
         return (
             <div className={styles.root}>
                 <div className={styles.wrapper}>
-                    <ChristmasDecoration /> <Header lang={this.props.lang}/>
+                    <Header lang={this.props.lang}/>
                     <MainInfo lang={this.props.lang}/>
                     <InstagramFrame lang={this.props.lang}/>
                     <div className={constants.push}/>
