@@ -15,7 +15,7 @@
     "grunt": "^0.4.5",
     "jade": "^1.11.0",
     "node-emoji": "^1.0.4",
-    "react": "^0.13.3",
+    "react": "^15.6.2",
     "react-router": "^0.13.3",
     "style-loader": "^0.12.3",
     "url-loader": "^0.5.7",
